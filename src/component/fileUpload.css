@@ -1,0 +1,11 @@
+.preview-box {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-top: 10px;
+  }
+  
+  .preview-image {
+    max-width: 100%;
+    height: auto;
+  }
+  

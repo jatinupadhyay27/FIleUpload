@@ -40,7 +40,6 @@ const FileUpload = () => {
       return;
     }
     setUploading(true);
-    // Simulate a file upload process
     setTimeout(() => {
       setUploading(false);
       alert("Files uploaded successfully!");

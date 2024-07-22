@@ -88,7 +88,7 @@ const FileUpload = () => {
                     <Button
                     variant='contained'
                     color='primary'
-                     className="bg-green-500 hover:bg-green-700 text-white font-bold py-1 px-2">
+                     className=" text-white font-bold py-1 px-2">
                     Download
                     </Button>
                   </a>

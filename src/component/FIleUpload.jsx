@@ -50,6 +50,7 @@ const FileUpload = () => {
     const updatedFileDataUrls = fileDataUrls.filter((_, i) => i !== index);
     setFileDataUrls(updatedFileDataUrls);
     sessionStorage.setItem('fileDataUrls', JSON.stringify(updatedFileDataUrls));
+    
   };
 
 

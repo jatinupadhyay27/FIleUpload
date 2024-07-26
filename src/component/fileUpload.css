@@ -31,8 +31,11 @@
    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
    background: linear-gradient(to bottom, #FA7268, #C62368);
  }
+ 
 
-
+ .my-button:hover {
+  background: linear-gradient(to left, #FA7268, #C62368) !important;
+}
   .preview-image {
     max-width: 100%;
     height: auto;

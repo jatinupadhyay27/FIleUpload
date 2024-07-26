@@ -66,17 +66,15 @@ const FileUpload = () => {
       />
       <Button
         variant="contained"
-        color="primary"
         onClick={handleUpload}
-        className="bg-blue-500  hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+        style={{ width: 150, borderRadius: 10, background: 'linear-gradient(to right, #FA7268, #C62368)' , transition: 'background 0.5s ease'}}
+        className="text-white font-bold py-2 px-4 rounded my-button"
         disabled={uploading}
       >
         {uploading ? "Uploading..." : "Upload"}
       </Button>
-      {uploadError && <p className="text-red-500 mt-4">{uploadError}</p>}
       {fileDataUrls.length > 0 && (
         <div className="mt-4">
-          <p className="text-green-500">Upload successful!</p>
           <div className="preview-box">
             {fileDataUrls.map((dataUrl, index) => (
               <div key={index} className="preview-item">

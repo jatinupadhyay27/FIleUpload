@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import { Button, TextField } from '@mui/material';
-import './fileUpload.css';
+import React, { useState, useEffect } from "react";
+import { Button, TextField } from "@mui/material";
+import "./fileUpload.css";
 
 const FileUpload = () => {
   const [files, setFiles] = useState([]);
@@ -9,7 +9,7 @@ const FileUpload = () => {
   const [uploadError, setUploadError] = useState(null);
 
   useEffect(() => {
-    const savedFileDataUrls = sessionStorage.getItem('fileDataUrls');
+    const savedFileDataUrls = sessionStorage.getItem("fileDataUrls");
     if (savedFileDataUrls) {
       setFileDataUrls(JSON.parse(savedFileDataUrls));
     }
@@ -28,7 +28,10 @@ const FileUpload = () => {
         newFileDataUrls.push(dataUrl);
         if (newFileDataUrls.length === selectedFiles.length) {
           setFileDataUrls((prev) => [...prev, ...newFileDataUrls]);
-          sessionStorage.setItem('fileDataUrls', JSON.stringify([...fileDataUrls, ...newFileDataUrls]));
+          sessionStorage.setItem(
+            "fileDataUrls",
+            JSON.stringify([...fileDataUrls, ...newFileDataUrls])
+          );
         }
       };
       reader.readAsDataURL(file);
@@ -50,24 +53,27 @@ const FileUpload = () => {
   const handleDelete = (index) => {
     const updatedFileDataUrls = fileDataUrls.filter((_, i) => i !== index);
     setFileDataUrls(updatedFileDataUrls);
-    sessionStorage.setItem('fileDataUrls', JSON.stringify(updatedFileDataUrls));
-    
+    sessionStorage.setItem("fileDataUrls", JSON.stringify(updatedFileDataUrls));
   };
-
 
   return (
     <div className="flex flex-col items-center p-4 space-y-4">
       <TextField
         type="file"
-        id='glass'
+        id="glass"
         onChange={handleFileChange}
         className="mb-4"
-        inputProps={{ accept: 'image/jpeg,application/pdf', multiple: true }}
+        inputProps={{ accept: "image/jpeg,application/pdf", multiple: true }}
       />
       <Button
         variant="contained"
         onClick={handleUpload}
-        style={{ width: 150, borderRadius: 10, background: 'linear-gradient(to right, #FA7268, #C62368)' , transition: 'background 0.5s ease'}}
+        style={{
+          width: 150,
+          borderRadius: 10,
+          background: "linear-gradient(to right, #FA7268, #C62368)",
+          transition: "background 0.5s ease",
+        }}
         className="text-white font-bold py-2 px-4 rounded my-button"
         disabled={uploading}
       >
@@ -78,19 +84,19 @@ const FileUpload = () => {
           <div className="preview-box">
             {fileDataUrls.map((dataUrl, index) => (
               <div key={index} className="preview-item">
-                <img src={dataUrl} alt={`Uploaded file preview ${index}`} className="preview-image" />
+                <img
+                  src={dataUrl}
+                  alt={`Uploaded file preview ${index}`}
+                  className="preview-image"
+                />
                 <div className="button-group mt-2 ">
-                  <a
-                    href={dataUrl}
-                    download={`file_${index}`}
-                   className='me-3'
-                    
-                  >
+                  <a href={dataUrl} download={`file_${index}`} className="me-3">
                     <Button
-                    variant='contained'
-                    color='primary'
-                     className=" text-white font-bold py-1 px-2">``
-                    Download
+                      variant="contained"
+                      color="primary"
+                      className=" text-white font-bold py-1 px-2"
+                    >
+                      `` Download
                     </Button>
                   </a>
                   <Button

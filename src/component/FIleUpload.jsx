@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Button, TextField } from '@mui/material';
+import './fileUpload.css';
 
 const FileUpload = () => {
   const [files, setFiles] = useState([]);
@@ -58,6 +59,7 @@ const FileUpload = () => {
     <div className="flex flex-col items-center p-4 space-y-4">
       <TextField
         type="file"
+        id='glass'
         onChange={handleFileChange}
         className="mb-4"
         inputProps={{ accept: 'image/jpeg,application/pdf', multiple: true }}

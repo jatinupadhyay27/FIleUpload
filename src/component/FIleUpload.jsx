@@ -96,7 +96,7 @@ const FileUpload = () => {
                       color="primary"
                       className=" text-white font-bold py-1 px-2"
                     >
-                      `` Download
+                       Download
                     </Button>
                   </a>
                   <Button

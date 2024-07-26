@@ -8,5 +8,5 @@ body {
     background-size: cover; /* Adjust the size as needed */
     background-position: center; /* Center the image */
     background-repeat: no-repeat; /* Prevent repetition */
-   
+   overflow: hidden;
 }  

@@ -9,7 +9,7 @@ const FileUpload = () => {
   const [uploadError, setUploadError] = useState(null);
 
   useEffect(() => {
-    const savedFileDataUrls = sessionStorage.getItem("fileDataUrls");
+    const savedFileDataUrls = localStorage.getItem("fileDataUrls");
     if (savedFileDataUrls) {
       setFileDataUrls(JSON.parse(savedFileDataUrls));
     }
@@ -28,7 +28,7 @@ const FileUpload = () => {
         newFileDataUrls.push(dataUrl);
         if (newFileDataUrls.length === selectedFiles.length) {
           setFileDataUrls((prev) => [...prev, ...newFileDataUrls]);
-          sessionStorage.setItem(
+          localStorage.setItem(
             "fileDataUrls",
             JSON.stringify([...fileDataUrls, ...newFileDataUrls])
           );
@@ -40,7 +40,7 @@ const FileUpload = () => {
 
   const handleUpload = () => {
     if (files.length === 0) {
-      setUploadError("No files selected.");
+      alert("No files selected.");
       return;
     }
     setUploading(true);
@@ -53,7 +53,7 @@ const FileUpload = () => {
   const handleDelete = (index) => {
     const updatedFileDataUrls = fileDataUrls.filter((_, i) => i !== index);
     setFileDataUrls(updatedFileDataUrls);
-    sessionStorage.setItem("fileDataUrls", JSON.stringify(updatedFileDataUrls));
+    localStorage.setItem("fileDataUrls", JSON.stringify(updatedFileDataUrls));
   };
 
   return (

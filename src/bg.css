@@ -1,0 +1,12 @@
+html, body {
+    height: 100%;
+    margin: 0; /* Remove default margins */
+  }
+
+body {
+    background-image: url('../src/assets/layer.png');
+    background-size: cover; /* Adjust the size as needed */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent repetition */
+    overflow: hidden;
+}  

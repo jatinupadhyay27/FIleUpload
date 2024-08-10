@@ -1,4 +1,9 @@
-
+::file-selector-button{
+  background: linear-gradient(to left, #FA7268, #C62368);
+  border-radius: 5px;
+  border: none;
+  color: white;
+}
 .preview-box {
   border: 1px solid #ccc;
   padding: 10px;
@@ -45,4 +50,5 @@
   -webkit-backdrop-filter: blur(9px);
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.18);
+  color: white;
 }

@@ -64,6 +64,7 @@ const FileUpload = () => {
         onChange={handleFileChange}
         className="mb-4"
         inputProps={{ accept: "image/jpeg,application/pdf", multiple: true }}
+        
       />
       <Button
         variant="contained"
